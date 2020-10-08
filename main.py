@@ -2,12 +2,24 @@ import tkinter as tk
 import tkinter.filedialog
 import tkinter.messagebox
 import tkinter.ttk
+import os, sys
 
 # variables
 file_types = [("All types (*.*)", "*.*"), ("Text file (*.txt)", "*.txt"), ("Python (*.py)", "*.py")]
 text_size = 10
 
 root = tk.Tk()
+
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
 
 
 def do_nothing():
@@ -72,6 +84,6 @@ text_area.pack(expand="yes", fill="both")
 root.geometry("600x400")
 root.config(menu=menu)
 root.bind("<Control-s>", ctrl_s)
-root.iconphoto(False, tk.PhotoImage(file="icon.png"))
+root.iconphoto(False, tk.PhotoImage(file=resource_path("icon.png")))
 root.title("ShitDE v0.1")
 root.mainloop()
