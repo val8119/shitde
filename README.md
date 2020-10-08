@@ -1,2 +1,2 @@
-# shitde
- ShitDE, the shit development environment
+# py_code_editor
+ 
