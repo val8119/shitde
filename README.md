@@ -1,4 +1,4 @@
-# py_code_editor
+# ShitDE
 
 What is ShitDE?
 
