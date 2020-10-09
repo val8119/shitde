@@ -70,6 +70,7 @@ filemenu.add_command(label="Save As...", command=file_save)
 menu.add_cascade(label="File", menu=filemenu)
 
 helpmenu = tk.Menu(menu, tearoff=0)
+helpmenu.add_command(label="Preferences", command=do_nothing)
 helpmenu.add_command(label="About...", command=about)
 menu.add_cascade(label="Help", menu=helpmenu)
 
